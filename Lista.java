@@ -68,12 +68,12 @@ public class Lista {
 
     @Override
     public String toString() {
-        String result = "";
+        String r = "";
         Nodo temp = head;
         while (temp != null) {
-            result += temp.value + "\n";
+            r += temp.value + "\n";
             temp = temp.next;
         }
-        return result;
+        return r;
     }
 }

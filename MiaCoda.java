@@ -1,23 +1,30 @@
 package com.example.listadinamica;
 
-public class miaPila {
+public class MiaCoda {
     private Lista lista;
 
-    public miaPila() {
+    public MiaCoda() {
         lista = new Lista();
     }
 
-    public void push(String valore) {
-        Nodo nuovo = new Nodo(valore);
-        nuovo.next = lista.head;  // inserimento in testa per LIFO
-        lista.head = nuovo;
+    public void enqueue(String valore) {
+        lista.aggiungi(valore);
     }
 
-    public String pop() {
-        if (lista.head == null) return null;
+    public String dequeue() {
+        if (lista.head == null){
+            return null;
+        }
         String valore = lista.head.value;
         lista.head = lista.head.next;
         return valore;
+    }
+
+    public String peek() {
+        if (lista.head == null){
+            return null;
+        }
+        return lista.head.value;
     }
 
     public boolean isEmpty() {
