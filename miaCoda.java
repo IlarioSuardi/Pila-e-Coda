@@ -1,34 +1,29 @@
 package com.example.listadinamica;
 
 public class miaCoda {
-    private Nodo head;
-    private Nodo tail;
+    private Lista lista;
 
     public miaCoda() {
-        head = null;
-        tail = null;
+        lista = new Lista();
     }
 
-    public void enqueue(Multa multa) {
-        Nodo nuovo = new Nodo(multa);
-        if (tail == null) {
-            head = nuovo;
-            tail = nuovo;
-        } else {
-            tail.next = nuovo;
-            tail = nuovo;
-        }
+    public void enqueue(String valore) {
+        lista.aggiungi(valore);  // aggiunta in coda per FIFO
     }
 
-    public Multa dequeue() {
-        if (head == null) return null;
-        Multa valore = head.value;
-        head = head.next;
-        if (head == null) tail = null;
+    public String dequeue() {
+        if (lista.head == null) return null;
+        String valore = lista.head.value;
+        lista.head = lista.head.next;
         return valore;
     }
 
     public boolean isEmpty() {
-        return head == null;
+        return lista.head == null;
+    }
+
+    @Override
+    public String toString() {
+        return lista.toString();
     }
 }

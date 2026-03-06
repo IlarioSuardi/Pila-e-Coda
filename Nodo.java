@@ -1,7 +1,6 @@
 package com.example.listadinamica;
 
 public class Nodo {
-
     public String value;
     public Nodo next;
 
@@ -10,6 +9,7 @@ public class Nodo {
         this.next = null;
     }
 
+    @Override
     public String toString() {
         return value;
     }
